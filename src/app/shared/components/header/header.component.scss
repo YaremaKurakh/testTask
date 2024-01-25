@@ -1,0 +1,26 @@
+/* styles.css (або інший ваш CSS-файл) */
+
+.mat-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.title-large {
+  font-size: 2.5rem;
+  margin-right: -0.5rem;
+}
+
+.title-small {
+  font-size: 0.9rem;
+  line-height: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.currency-rate {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 30px;
+}

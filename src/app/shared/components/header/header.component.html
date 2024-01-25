@@ -1,0 +1,13 @@
+<!-- app.component.html -->
+
+<mat-toolbar color="primary">
+  <app-back-button *ngIf="!(isMainPage$ | async)"></app-back-button>
+  <span class="title-large">T</span>
+  <span class="title-small">est<br>ask</span>
+  <div *ngIf="isCurrencyPage$ | async" class="currency-rate">
+    <ng-container *ngIf="exchangeRates$ | async as rates">
+      <span class="title-small">USD: {{rates['USD']}}</span>
+      <span class="title-small">EUR: {{rates['EUR']}}</span>
+    </ng-container>
+  </div>
+</mat-toolbar>

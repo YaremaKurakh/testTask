@@ -1,0 +1,42 @@
+<div class="outer-container">
+  <ng-container *ngIf="isCurrencies$ | async">
+    <div class="inner-container" [formGroup]="form">
+      <div class="column">
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter amount:</mat-label>
+            <input matInput type="number" formControlName="leftAmount"/>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Select currency:</mat-label>
+            <mat-select formControlName="leftCurrency">
+              <mat-option *ngFor="let currency of exchangeRates | keyvalue" [value]="currency.key">{{ currency.key }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="column center">
+        <button mat-raised-button color="primary" (click)="convert()">Convert</button>
+      </div>
+
+      <div class="column">
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter amount:</mat-label>
+            <input matInput type="number" formControlName="rightAmount"/>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Select currency:</mat-label>
+            <mat-select formControlName="rightCurrency">
+              <mat-option *ngFor="let currency of exchangeRates | keyvalue" [value]="currency.key">{{ currency.key }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </div>
+  </ng-container>
+</div>
